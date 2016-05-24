@@ -4,6 +4,7 @@
     'version': '0.1',
     'depends': ['base','account','account_report_receivables'],
     'data': [
+	'account_report_receivables.xml'
     ],
     'demo': [
     ],

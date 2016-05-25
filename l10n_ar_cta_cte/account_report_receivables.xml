@@ -40,14 +40,10 @@
 						                    <strong>Vendedor:</strong>
 						                    <p t-field="o.user_id.name"/>
 							        </div>
-                						<div class="col-xs-2" t-if="o.credit">
+                						<div class="col-xs-2" >
 						                    <strong>Saldo Cliente:</strong>
 					        	            <p class="text-right" t-field="o.credit"/>
 						        	</div>
-	                					<div class="col-xs-2" t-if="o.debit">
-						                    <strong>Saldo Proveedor:</strong>
-						                    <p class="text-right" t-field="o.debit"/>
-							        </div>
 							</div>
                 					<div class="col-xs-12" t-if="o.move_line_ids">
                                                         	<table class="table table-condensed table-bordered">

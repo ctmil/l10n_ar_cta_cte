@@ -15,7 +15,8 @@
 						<h2>Cuenta Corriente del Cliente</h2>
 						<t t-foreach="docs" t-as="o">
 							<!-- Report page content -->
-						    <div t-if="o.credit > 0 or o.debit > 0">
+						    <div>
+						    <!-- div t-if="o.credit > 0 or o.debit > 0" -->
 							<div class="row">
 								<h3 t-field="o.name" />
 							</div>

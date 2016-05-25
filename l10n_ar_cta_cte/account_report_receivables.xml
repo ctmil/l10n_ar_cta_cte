@@ -67,7 +67,7 @@
 											    <td><span t-field="l.date"/></td>
 		                                                                            <td>
 												<span t-if="l.invoice">
-													<span t-field="l.invoice.internal-number"/>
+													<span t-field="l.invoice.internal_number"/>
 												</span>
 												<span t-if="not l.invoice">
 													<span t-field="l.name" />

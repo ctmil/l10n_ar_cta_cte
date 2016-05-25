@@ -53,28 +53,33 @@
                                                                 	<thead>
                                                                         	<tr>
                                                                                		<th>Fecha</th>
-	                                                                                <th>Nro.Fac</th>
-        	                                                                        <th>Tipo Fac</th>
-                	                                                                <th>Estado</th>
+	                                                                                <th>Numero</th>
+        	                                                                        <th>Tipo Documento</th>
                         	                                                        <th>Moneda</th>
-                                	                                                <th class="text-right">Monto</th>
-                                        	                                        <th class="text-right">Sin Pagar</th>
+                                	                                                <th class="text-right">Debito</th>
+                                        	                                        <th class="text-right">Credito</th>
                                                 	                       </tr>
                                                         	        </thead>
 									<tbody>
 										<t t-foreach="o.move_line_ids" t-as="l">
-										    <div t-if="i.account_id.code in ('113010')">
+										    <div t-if="i.account_id.type in ('receivable')">
 											<tr>
 											    <td><span t-field="l.date"/></td>
-		                                                                            <td><span t-field="i.number"/></td>
-                		                                                            <td><span t-field="i.journal_id.name"/></td>
-                                		                                            <td><span t-field="i.state"/></td>
-                                                		                            <td><span t-field="i.currency_id.name"/></td>
+		                                                                            <td>
+												<span t-if="l.invoice">
+													<span t-field="l.invoice.internal-number"/>
+												</span>
+												<span t-if="not l.invoice">
+													<span t-field="l.name" />
+												</span>
+											    </td>
+                		                                                            <td><span t-field="l.journal_id.name"/></td>
+                                                		                            <td><span t-field="l.currency_id.name"/></td>
                                                                 		            <td class="text-right">
-                                                                                		    <span t-field="i.amount_total" />
+                                                                                		    <span t-field="l.debit" />
 		                                                                            </td>
 											    <td class="text-right">
-                		                                                                    <span t-field="i.residual" />
+                		                                                                    <span t-field="l.credit" />
 		                                                                            </td>
 											</tr>
 										    </div>

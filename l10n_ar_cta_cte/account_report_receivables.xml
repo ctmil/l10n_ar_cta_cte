@@ -21,7 +21,7 @@
 								<h3 t-field="o.name" />
 							</div>
 							<div class="row">
-	                					<div class="col-xs-2" t-if="o.street">
+	                					<div class="col-xs-4" t-if="o.street">
 						                    <strong>Calle:</strong>
 						                    <p t-field="o.street"/>
 							        </div>
@@ -30,7 +30,8 @@
 					        	            <p t-field="o.city"/>
 						        	</div>
 	                					<div class="col-xs-2" t-if="o.phone">
-						                    <strong>Telefono:<p t-field="o.phone"/></strong>
+						                    <strong>Telefono:</strong>
+								    <p t-field="o.phone"/>
 							        </div>
                 						<div class="col-xs-2" t-if="o.vat">
 						                    <strong>CUIT:</strong>

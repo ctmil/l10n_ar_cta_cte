@@ -56,7 +56,7 @@
                                                                                		<th>Fecha</th>
 	                                                                                <th>Numero</th>
         	                                                                        <th>Tipo Documento</th>
-                        	                                                        <th>Moneda</th>
+        	                                                                        <th>Tipo Mov</th>
                                 	                                                <th class="text-right">Debito</th>
                                         	                                        <th class="text-right">Credito</th>
                                                 	                       </tr>
@@ -75,7 +75,14 @@
 												</span>
 											    </td>
                 		                                                            <td><span t-field="l.journal_id.name"/></td>
-                                                		                            <td><span t-field="l.currency_id.name"/></td>
+											    <td>
+												<span t-if="l.journal_id.type == 'sale'">
+													Venta
+												</span>
+												<span t-if="l.journal_id.type in ['cash','bank']">
+													Pago
+												</span>
+											    </td>
                                                                 		            <td class="text-right">
                                                                                 		    <span t-field="l.debit" />
 		                                                                            </td>

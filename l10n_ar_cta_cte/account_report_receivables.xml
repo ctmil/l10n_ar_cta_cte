@@ -26,7 +26,7 @@
 								<h3 t-field="o.name" />
 							</div>
 							<div class="row">
-	                					<div class="col-xs-4" t-if="o.street">
+	                					<div class="col-xs-2" t-if="o.street">
 						                    <strong>Calle:</strong>
 						                    <p t-field="o.street"/>
 							        </div>
@@ -46,8 +46,13 @@
 						                    <strong>Vendedor:</strong>
 						                    <p t-field="o.user_id.name"/>
 							        </div>
-                						<div class="col-xs-2" >
+                						<div t-if="o.debit" class="col-xs-2" >
 						                    <strong>Saldo Cliente:</strong>
+						                    <p t-field="o.debit"/>
+								</div>
+                						<div t-if="o.credit" class="col-xs-2" >
+						                    <strong>Saldo Proveedor:</strong>
+						                    <p t-field="o.credit"/>
 								</div>
 							</div>
 							<!-- Report page content -->

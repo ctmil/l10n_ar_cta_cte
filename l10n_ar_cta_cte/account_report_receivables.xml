@@ -48,11 +48,11 @@
 							        </div>
                 						<div t-if="o.debit" class="col-xs-2" >
 						                    <strong>Saldo Cliente:</strong>
-						                    <p t-field="o.debit"/>
+						                    <p t-field="o.debit" class="text-right" />
 								</div>
                 						<div t-if="o.credit" class="col-xs-2" >
 						                    <strong>Saldo Proveedor:</strong>
-						                    <p t-field="o.credit"/>
+						                    <p t-field="o.credit" class="text-right" />
 								</div>
 							</div>
 							<!-- Report page content -->

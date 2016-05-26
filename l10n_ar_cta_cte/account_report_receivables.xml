@@ -12,9 +12,14 @@
 			<t t-call="report.html_container">
 				<t t-call="report.internal_layout">
 					<div class="page">
-						<h2>Cuenta Corriente del Cliente</h2>
 						<t t-foreach="docs" t-as="o">
-							<!-- Report page content -->
+						    <div t-if="o.customer">
+							<h2>Cuenta Corriente del Cliente</h2>
+						    </div> <!-- fin is_customer -->
+						    <div t-if="o.supplier">
+							<h2>Cuenta Corriente del Proveedor</h2>
+						     </div>
+						<!-- Report page content -->
 						    <div>
 						    <!-- div t-if="o.credit > 0 or o.debit > 0" -->
 							<div class="row">
@@ -43,9 +48,11 @@
 							        </div>
                 						<div class="col-xs-2" >
 						                    <strong>Saldo Cliente:</strong>
-					        	            <p class="text-right" t-field="o.credit"/>
-						        	</div>
+								</div>
 							</div>
+							<!-- Report page content -->
+						    </div>
+						    <!-- div t-if="o.credit > 0 or o.debit > 0" -->
                 					<div class="col-xs-12" t-if="o.move_line_ids">
                                                         	<table class="table table-condensed table-bordered">
                                                                 	<thead>
@@ -90,15 +97,13 @@
 										    </div>
 										</t>
 									</tbody>
-								</table>
-								<br />
-							</div>
-						    </div>
-						</t>
-					</div>
-				</t>
-			</t>
-		</template>
+								</table> <!-- fin table -->
+						    </div> <!-- fin move_line_ids -->
+						</t> <!-- fin foreach -->
+					</div> <!-- fin page -->
+				</t> <!-- fin internal_layout -->
+			</t> <!-- fin tcall report container -->
+		</template><!-- fin template -->
 
 	</data>
 </openerp>

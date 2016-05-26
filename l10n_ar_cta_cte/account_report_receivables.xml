@@ -67,7 +67,7 @@
                                                         	        </thead>
 									<tbody>
 										<t t-foreach="o.move_line_ids" t-as="l">
-										    <div t-if="l.account_id.type in ('receivable')">
+										    <div t-if="l.account_id.type in ('receivable','payable')">
 											<tr>
 											    <td><span t-field="l.date"/></td>
 		                                                                            <td>
